@@ -54,8 +54,8 @@ public MiotyModel(int mode) {
     public ArrayList<FrameModel> getFrameModel(long startUs) {
         // pattern selection and freq shift are based on CRC as a pseudo random generator
         // here we use a random value, should be equivalent
-        int pattern = (int) Math.floor(Math.random() * 8);          // random pattern selection
-        int fOffset = (int) Math.floor(Math.random() * 11) - 5;     // the best condition is +/-5 shift
+        int pattern = (int) Math.floor(Math.random() * 7.99);          // random pattern selection
+        int fOffset = (int) Math.floor(Math.random() * 10.99) - 5;     // the best condition is +/-5 shift
         int bank =(Math.random() > 0.5 && mode == MODE_EU1)?40:0;   // randomly select the bank for EU1 (2x100KHz)
         ArrayList<FrameModel> r = new ArrayList<>();
         long _startUs = startUs;
@@ -127,7 +127,7 @@ public MiotyModel(int mode) {
             frag++;
             h = h.getNext();
         } while ( h != null );
-        if ( 3 * col > frag ) {
+        if ( col >= (2 * frag)/3 ) {
             // >=1/3 split collisioned, impossible to reconstruct
             f.markWholeFrameLost();
             return false;

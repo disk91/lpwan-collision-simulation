@@ -8,7 +8,7 @@ public class Main {
         RadioModel r = new MiotyModel(MiotyModel.MODE_EU1);
         RadioModel s = new SigfoxModel();
         RadioModel l = new LoRaWanModel();
-        String resultFile = "output-5.csv";
+        String resultFile = "output-6.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(resultFile, false))) {
             for ( int i = 2 ; i < 250 ; i+=1) {

@@ -42,8 +42,8 @@ public class ModelRunner {
         // Store all frames
         ArrayList<FrameModel> allFrames = new ArrayList<>();
 
-        // Generate 10x more frame per second on a 10s time range
-        for ( int i = 0 ; i < messagesPerSecond * 10 ; i++ ) {
+        // Generate 10x more frame per second on a RUN_DURATION_S time range
+        for ( int i = 0 ; i < messagesPerSecond * RUN_DURATION_S ; i++ ) {
             // get a starting time in us
             long start = (long)Math.floor(Math.random()*RUN_DURATION_S*1_000_000);
             // Generate the frames
