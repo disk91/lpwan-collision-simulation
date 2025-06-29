@@ -25,7 +25,6 @@ public class SigfoxModel extends RadioModel {
             fm.setUsStart(startUs);
             // the duration of a 12 byte transmission is 200bits @ 100bps all included
             fm.setUsEnd(startUs + 2_000_000);
-            // the channel is basically 1 on 25 + 10 due to the frequency offset
             fm.setChannel(channel);
             // no group notion
             fm.setGroup(0);
